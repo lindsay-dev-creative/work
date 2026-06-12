@@ -1,0 +1,1264 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>Eleven Peaks Trading Co. — Outfitting Boykin Spaniel Fans Since 2014</title>
+<meta name="description" content="Eleven Peaks Trading Company — apparel, headwear, pet gear, gifts and Boykinflauge™ for Boykin Spaniel fans since 2014." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --brown:#4a2a18;            /* primary, sampled from logo */
+    --brown-deep:#37200f;
+    --brown-soft:#6b4329;
+    --tan:#c9a876;
+    --tan-light:#e0caa6;
+    --khaki:#8a7355;
+    --cream:#faf6ef;
+    --linen:#f2eada;
+    --linen-2:#ece0cc;
+    --forest:#3e4a38;
+    --rust:#9b3a2e;            /* sale */
+    --ink:#2b2018;
+    --muted:#7a6c5d;
+    --line:#e3d7c3;
+    --white:#ffffff;
+    --shadow:0 18px 50px -24px rgba(55,32,15,.45);
+    --shadow-sm:0 8px 24px -16px rgba(55,32,15,.5);
+    --serif:'Cormorant Garamond', Georgia, serif;
+    --sans:'Montserrat', system-ui, -apple-system, sans-serif;
+    --maxw:1280px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{
+    margin:0;font-family:var(--sans);color:var(--ink);background:var(--cream);
+    font-size:15px;line-height:1.6;-webkit-font-smoothing:antialiased;overflow-x:hidden;
+  }
+  h1,h2,h3,h4{font-family:var(--serif);font-weight:600;color:var(--brown);margin:0;line-height:1.08;letter-spacing:.01em}
+  a{color:inherit;text-decoration:none}
+  img{max-width:100%;display:block}
+  button{font-family:var(--sans);cursor:pointer;border:none;background:none}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0}
+  .hidden{display:none !important}
+
+  /* ---------- Buttons ---------- */
+  .btn{
+    display:inline-flex;align-items:center;justify-content:center;gap:.55em;
+    font-family:var(--sans);font-weight:600;font-size:12px;letter-spacing:.16em;text-transform:uppercase;
+    padding:14px 30px;border-radius:2px;transition:.25s ease;cursor:pointer;white-space:nowrap;
+  }
+  .btn-primary{background:var(--brown);color:var(--cream)}
+  .btn-primary:hover{background:var(--brown-deep);transform:translateY(-1px)}
+  .btn-outline{background:transparent;color:var(--brown);border:1.5px solid var(--brown)}
+  .btn-outline:hover{background:var(--brown);color:var(--cream)}
+  .btn-light{background:var(--cream);color:var(--brown)}
+  .btn-light:hover{background:#fff}
+  .btn-ghost{background:transparent;color:var(--brown);border:1.5px solid rgba(255,255,255,.7)}
+  .btn-block{width:100%}
+
+  /* ---------- Announcement ---------- */
+  .announce{background:var(--brown-deep);color:var(--tan-light);text-align:center;font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;padding:9px 16px;font-weight:500}
+  .announce b{color:#fff;font-weight:600}
+
+  /* ---------- Header ---------- */
+  header.site{position:sticky;top:0;z-index:60;background:var(--cream);border-bottom:1px solid var(--line);transition:box-shadow .3s}
+  header.site.scrolled{box-shadow:0 10px 30px -22px rgba(55,32,15,.6)}
+  .nav-row{display:flex;align-items:center;justify-content:space-between;gap:24px;padding:18px 40px}
+  .brand{display:flex;align-items:center;flex:0 0 auto}
+  .brand img{height:52px;width:auto}
+  .nav-links{display:flex;align-items:center;gap:30px;flex:1;justify-content:center}
+  .nav-links > a, .nav-item > .nav-trigger{
+    font-size:12px;letter-spacing:.15em;text-transform:uppercase;font-weight:600;color:var(--brown);
+    padding:8px 0;position:relative;background:none;cursor:pointer;display:inline-flex;align-items:center;gap:6px;
+  }
+  .nav-links a::after,.nav-trigger::after{content:"";position:absolute;left:0;bottom:0;height:1.5px;width:0;background:var(--brown);transition:width .25s}
+  .nav-links a:hover::after,.nav-item:hover .nav-trigger::after{width:100%}
+  .nav-trigger .chev{width:7px;height:7px;border-right:1.5px solid var(--brown);border-bottom:1.5px solid var(--brown);transform:rotate(45deg);margin-top:-3px;transition:.25s}
+  .nav-item{position:relative}
+  .mega{
+    position:absolute;top:100%;left:50%;transform:translateX(-50%) translateY(10px);
+    background:#fff;border:1px solid var(--line);box-shadow:var(--shadow);border-radius:4px;
+    padding:22px;min-width:560px;display:grid;grid-template-columns:1fr 1fr;gap:6px 30px;
+    opacity:0;visibility:hidden;transition:.22s;margin-top:6px;
+  }
+  .nav-item:hover .mega{opacity:1;visibility:visible;transform:translateX(-50%) translateY(0)}
+  .mega h5{grid-column:1/-1;font-family:var(--sans);font-size:10.5px;letter-spacing:.22em;text-transform:uppercase;color:var(--khaki);margin:0 0 6px;font-weight:700}
+  .mega a{display:flex;align-items:center;gap:10px;padding:9px 10px;border-radius:3px;font-size:13.5px;color:var(--ink);transition:.18s;font-weight:500}
+  .mega a:hover{background:var(--linen);color:var(--brown);padding-left:14px}
+  .mega a .dot{width:6px;height:6px;border-radius:50%;background:var(--tan)}
+  .nav-actions{display:flex;align-items:center;gap:18px;flex:0 0 auto}
+  .icon-btn{position:relative;color:var(--brown);display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:50%;transition:.2s}
+  .icon-btn:hover{background:var(--linen)}
+  .icon-btn svg{width:20px;height:20px}
+  .cart-count{position:absolute;top:-3px;right:-3px;background:var(--rust);color:#fff;font-size:10px;font-weight:700;min-width:17px;height:17px;border-radius:9px;display:flex;align-items:center;justify-content:center;padding:0 4px;font-family:var(--sans)}
+  .hamburger{display:none;flex-direction:column;gap:4px;width:34px;height:34px;align-items:center;justify-content:center}
+  .hamburger span{width:20px;height:1.8px;background:var(--brown);transition:.25s}
+
+  /* ---------- Search bar ---------- */
+  .searchbar{border-top:1px solid var(--line);background:#fff;max-height:0;overflow:hidden;transition:max-height .3s ease}
+  .searchbar.open{max-height:90px}
+  .searchbar .inner{display:flex;align-items:center;gap:14px;padding:18px 0}
+  .searchbar input{flex:1;border:none;outline:none;font-family:var(--serif);font-size:24px;color:var(--brown);background:transparent}
+  .searchbar input::placeholder{color:var(--tan)}
+
+  /* ---------- Hero ---------- */
+  .hero{position:relative;height:640px;overflow:hidden;background:var(--brown-deep)}
+  .slide{position:absolute;inset:0;opacity:0;transition:opacity 1.1s ease;display:flex;align-items:center}
+  .slide.active{opacity:1}
+  .slide .bg{position:absolute;inset:0;background-size:cover;background-position:center}
+  .slide .scrim{position:absolute;inset:0;background:linear-gradient(90deg,rgba(40,23,11,.9) 0%,rgba(40,23,11,.72) 45%,rgba(40,23,11,.5) 100%)}
+  .slide-content{position:relative;color:var(--cream);max-width:900px;display:grid;grid-template-columns:1fr auto;grid-template-areas:"ey btn" "h1 btn" "p btn";column-gap:56px;align-items:center}
+  .slide-content .ey{grid-area:ey;font-size:12px;letter-spacing:.28em;text-transform:uppercase;color:var(--tan-light);margin-bottom:18px;font-weight:600}
+  .slide-content h1{grid-area:h1;color:#fff;font-size:64px;font-weight:600;margin-bottom:18px;text-shadow:0 2px 20px rgba(0,0,0,.3)}
+  .slide-content p{grid-area:p;font-size:17px;max-width:430px;margin-bottom:30px;color:#f3e7d6;font-weight:300}
+  .slide-content .btn{grid-area:btn;align-self:center;justify-self:start}
+  .hero-ctrl{position:absolute;bottom:30px;left:50%;transform:translateX(-50%);display:flex;gap:10px;z-index:5}
+  .hero-dot{width:34px;height:3px;background:rgba(255,255,255,.35);cursor:pointer;transition:.25s;border-radius:2px}
+  .hero-dot.active{background:var(--tan)}
+  .hero-arrow{position:absolute;top:50%;transform:translateY(-50%);z-index:5;width:50px;height:50px;border-radius:50%;background:rgba(250,246,239,.12);border:1px solid rgba(255,255,255,.3);color:#fff;display:flex;align-items:center;justify-content:center;backdrop-filter:blur(4px);transition:.2s}
+  .hero-arrow:hover{background:rgba(250,246,239,.28)}
+  .hero-arrow.prev{left:24px}.hero-arrow.next{right:24px}
+  .hero-arrow svg{width:20px;height:20px}
+
+  /* ---------- Marquee / value props ---------- */
+  .props{background:var(--linen);border-bottom:1px solid var(--line)}
+  .props .wrap{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;padding:26px 28px}
+  .prop{display:flex;align-items:center;gap:14px;justify-content:center}
+  .prop svg{width:26px;height:26px;color:var(--brown-soft);flex:0 0 auto}
+  .prop b{display:block;font-size:13px;color:var(--brown);font-weight:600;letter-spacing:.02em}
+  .prop span{font-size:11.5px;color:var(--muted);letter-spacing:.04em}
+
+  /* ---------- Section headings ---------- */
+  section.block{padding:78px 0}
+  .sec-head{text-align:center;max-width:640px;margin:0 auto 46px}
+  .sec-head .kick{font-size:11.5px;letter-spacing:.26em;text-transform:uppercase;color:var(--tan);font-weight:700;margin-bottom:14px;display:flex;align-items:center;justify-content:center;gap:12px}
+  .sec-head .kick::before,.sec-head .kick::after{content:"";height:1px;width:34px;background:var(--tan)}
+  .sec-head h2{font-size:46px;margin-bottom:14px}
+  .sec-head p{color:var(--muted);font-size:15px}
+
+  /* ---------- Category tiles ---------- */
+  .cat-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px}
+  .cat-card{position:relative;height:300px;border-radius:6px;overflow:hidden;cursor:pointer;box-shadow:var(--shadow-sm)}
+  .cat-card .bg{position:absolute;inset:0;transition:transform .6s ease}
+  .cat-card:hover .bg{transform:scale(1.06)}
+  .cat-card .ov{position:absolute;inset:0;background:linear-gradient(180deg,rgba(40,23,11,.05) 30%,rgba(40,23,11,.82) 100%)}
+  .cat-card .label{position:absolute;left:0;right:0;bottom:0;padding:26px;color:#fff}
+  .cat-card .label h3{color:#fff;font-size:27px;margin-bottom:4px}
+  .cat-card .label span{font-size:11.5px;letter-spacing:.18em;text-transform:uppercase;color:var(--tan-light);font-weight:600;display:inline-flex;align-items:center;gap:8px}
+  .cat-card .label span svg{width:14px;height:14px;transition:.25s}
+  .cat-card:hover .label span svg{transform:translateX(5px)}
+
+  /* ---------- Tabs (Featured) ---------- */
+  .tabs{display:flex;flex-wrap:wrap;justify-content:center;gap:6px;margin-bottom:42px}
+  .tab{font-size:12px;letter-spacing:.14em;text-transform:uppercase;font-weight:600;color:var(--khaki);padding:11px 22px;border-radius:2px;transition:.22s;border:1px solid transparent}
+  .tab:hover{color:var(--brown)}
+  .tab.active{color:var(--brown);border-color:var(--line);background:#fff;box-shadow:var(--shadow-sm)}
+
+  /* ---------- Product grid / cards ---------- */
+  .prod-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:26px 22px}
+  .card{background:#fff;border:1px solid var(--line);border-radius:6px;overflow:hidden;transition:.28s;display:flex;flex-direction:column;cursor:pointer}
+  .card:hover{transform:translateY(-5px);box-shadow:var(--shadow)}
+  .card .imgwrap{position:relative;aspect-ratio:1/1;overflow:hidden;background:var(--linen)}
+  .card .imgwrap img{width:100%;height:100%;object-fit:cover;transition:transform .5s ease}
+  .card:hover .imgwrap img{transform:scale(1.05)}
+  .badge{position:absolute;top:12px;left:12px;font-size:10px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;padding:5px 11px;border-radius:2px;color:#fff;z-index:2}
+  .badge.sale{background:var(--rust)}
+  .badge.new{background:var(--forest)}
+  .badge.best{background:var(--brown-soft)}
+  .quick-add{position:absolute;left:12px;right:12px;bottom:12px;transform:translateY(130%);opacity:0;transition:.3s;z-index:3}
+  .card:hover .quick-add{transform:translateY(0);opacity:1}
+  .card .body{padding:16px 16px 18px;display:flex;flex-direction:column;flex:1}
+  .card .cat-tag{font-size:10px;letter-spacing:.16em;text-transform:uppercase;color:var(--tan);font-weight:600;margin-bottom:7px}
+  .card .name{font-family:var(--serif);font-size:19px;font-weight:600;color:var(--ink);line-height:1.16;margin-bottom:10px;flex:1}
+  .card:hover .name{color:var(--brown)}
+  .price-row{display:flex;align-items:baseline;gap:9px}
+  .price{font-weight:600;color:var(--brown);font-size:15px}
+  .price.on-sale{color:var(--rust)}
+  .compare{color:var(--muted);text-decoration:line-through;font-size:13px}
+  .stars{display:flex;gap:1px;margin-bottom:9px}
+  .stars svg{width:13px;height:13px;color:var(--tan)}
+
+  .see-more-row{text-align:center;margin-top:48px}
+
+  /* ---------- Collection page ---------- */
+  .collection-hero{background:var(--brown);color:var(--cream);padding:60px 0;position:relative;overflow:hidden}
+  .collection-hero .paw-bg{position:absolute;right:-40px;top:-30px;width:300px;opacity:.08;color:var(--tan)}
+  .crumbs{font-size:11.5px;letter-spacing:.14em;text-transform:uppercase;color:var(--tan-light);margin-bottom:14px;font-weight:500}
+  .crumbs a{color:var(--tan-light)}.crumbs a:hover{color:#fff}
+  .collection-hero h1{color:#fff;font-size:52px;margin-bottom:10px}
+  .collection-hero p{color:#f0e2cf;max-width:560px;font-weight:300}
+  .collection-bar{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:24px 0;border-bottom:1px solid var(--line);margin-bottom:36px}
+  .collection-bar .count{font-size:13px;color:var(--muted);letter-spacing:.04em}
+  .collection-bar .count b{color:var(--brown)}
+  .sortsel{display:flex;align-items:center;gap:10px}
+  .sortsel label{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--khaki);font-weight:600}
+  .sortsel select{font-family:var(--sans);font-size:13px;padding:9px 32px 9px 14px;border:1px solid var(--line);border-radius:3px;background:#fff;color:var(--brown);cursor:pointer;appearance:none;
+    background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='%234a2a18' stroke-width='2'%3E%3Cpath d='M6 9l6 6 6-6'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:right 10px center;background-size:14px}
+
+  /* ---------- Product detail ---------- */
+  .pdp{display:grid;grid-template-columns:1.05fr 1fr;gap:60px;padding-top:54px}
+  .pdp-gallery .main{aspect-ratio:1/1;border-radius:8px;overflow:hidden;background:var(--linen);border:1px solid var(--line)}
+  .pdp-gallery .main img{width:100%;height:100%;object-fit:cover}
+  .pdp-thumbs{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:14px}
+  .pdp-thumbs img{aspect-ratio:1/1;object-fit:cover;border-radius:5px;border:1.5px solid var(--line);cursor:pointer;background:var(--linen);transition:.2s}
+  .pdp-thumbs img:hover,.pdp-thumbs img.active{border-color:var(--brown)}
+  .pdp-info .cat-tag{font-size:11px;letter-spacing:.18em;text-transform:uppercase;color:var(--tan);font-weight:700;margin-bottom:12px}
+  .pdp-info h1{font-size:42px;margin-bottom:14px}
+  .pdp-price{display:flex;align-items:baseline;gap:12px;margin-bottom:18px}
+  .pdp-price .price{font-size:26px}
+  .pdp-price .compare{font-size:18px}
+  .pdp-rate{display:flex;align-items:center;gap:10px;margin-bottom:24px;font-size:13px;color:var(--muted)}
+  .pdp-rate .stars svg{width:16px;height:16px}
+  .pdp-desc{color:#5a4c3e;line-height:1.8;margin-bottom:28px;padding-bottom:28px;border-bottom:1px solid var(--line)}
+  .opt-label{font-size:11px;letter-spacing:.16em;text-transform:uppercase;color:var(--khaki);font-weight:700;margin-bottom:12px;display:block}
+  .swatches,.sizes{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:26px}
+  .size-opt{min-width:48px;padding:11px 14px;border:1.5px solid var(--line);border-radius:3px;font-size:13px;font-weight:600;color:var(--brown);background:#fff;transition:.18s}
+  .size-opt:hover{border-color:var(--brown-soft)}
+  .size-opt.active{background:var(--brown);color:#fff;border-color:var(--brown)}
+  .swatch{width:34px;height:34px;border-radius:50%;border:2px solid #fff;box-shadow:0 0 0 1.5px var(--line);cursor:pointer;transition:.18s}
+  .swatch.active{box-shadow:0 0 0 2px var(--brown)}
+  .qty-add{display:flex;gap:14px;align-items:stretch;margin-bottom:24px}
+  .qtybox{display:flex;align-items:center;border:1.5px solid var(--line);border-radius:3px;overflow:hidden}
+  .qtybox button{width:46px;font-size:20px;color:var(--brown);background:#fff;transition:.15s}
+  .qtybox button:hover{background:var(--linen)}
+  .qtybox span{width:46px;text-align:center;font-weight:600;color:var(--brown)}
+  .pdp-meta{font-size:13px;color:var(--muted);line-height:1.9}
+  .pdp-meta b{color:var(--brown);font-weight:600}
+
+  /* ---------- Story strip ---------- */
+  .story{background:var(--brown);color:var(--cream);position:relative;overflow:hidden}
+  .story .wrap{display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:center;padding:0}
+  .story-img{height:520px;background-size:cover;background-position:center;position:relative}
+  .story-txt{padding:80px 60px 80px 0}
+  .story-txt .kick{color:var(--tan);letter-spacing:.26em;text-transform:uppercase;font-size:11.5px;font-weight:700;margin-bottom:18px}
+  .story-txt h2{color:#fff;font-size:46px;margin-bottom:22px;line-height:1.12}
+  .story-txt p{color:#ecdcc6;font-weight:300;margin-bottom:18px;line-height:1.85}
+  .story-txt .sig{font-family:var(--serif);font-style:italic;font-size:24px;color:var(--tan-light);margin-top:8px}
+
+  /* ---------- Newsletter ---------- */
+  .news{background:var(--linen);text-align:center}
+  .news .inner{max-width:560px;margin:0 auto}
+  .news .paw{width:40px;color:var(--tan);margin:0 auto 18px}
+  .news h2{font-size:40px;margin-bottom:12px}
+  .news p{color:var(--muted);margin-bottom:28px}
+  .news form{display:flex;gap:10px;max-width:460px;margin:0 auto}
+  .news input{flex:1;border:1.5px solid var(--line);background:#fff;border-radius:3px;padding:14px 18px;font-family:var(--sans);font-size:14px;outline:none;color:var(--brown)}
+  .news input:focus{border-color:var(--brown-soft)}
+  .news .ok{color:var(--forest);font-weight:600;margin-top:16px;font-size:14px}
+
+  /* ---------- About / Contact ---------- */
+  .page-hero{background:var(--brown);color:var(--cream);text-align:center;padding:72px 0}
+  .page-hero h1{color:#fff;font-size:54px;margin-bottom:12px}
+  .page-hero p{color:var(--tan-light);max-width:560px;margin:0 auto;font-weight:300}
+  .about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px;align-items:center}
+  .about-grid img,.about-grid .ph{border-radius:8px;height:420px;object-fit:cover;width:100%}
+  .about-grid h2{font-size:38px;margin-bottom:18px}
+  .about-grid p{color:#5a4c3e;line-height:1.85;margin-bottom:16px}
+  .vals{display:grid;grid-template-columns:repeat(3,1fr);gap:26px;margin-top:20px}
+  .val{text-align:center;padding:34px 22px;background:#fff;border:1px solid var(--line);border-radius:6px}
+  .val svg{width:34px;height:34px;color:var(--brown-soft);margin:0 auto 16px}
+  .val h3{font-size:22px;margin-bottom:8px}
+  .val p{font-size:13.5px;color:var(--muted)}
+  .contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+  .contact-info .row{display:flex;gap:16px;margin-bottom:26px;align-items:flex-start}
+  .contact-info .row svg{width:24px;height:24px;color:var(--brown-soft);flex:0 0 auto;margin-top:2px}
+  .contact-info .row b{display:block;color:var(--brown);font-size:15px;margin-bottom:3px}
+  .contact-info .row span{color:var(--muted);font-size:14px}
+  .form-field{margin-bottom:18px}
+  .form-field label{display:block;font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--khaki);font-weight:700;margin-bottom:8px}
+  .form-field input,.form-field textarea{width:100%;border:1.5px solid var(--line);border-radius:3px;padding:13px 15px;font-family:var(--sans);font-size:14px;outline:none;color:var(--brown);background:#fff}
+  .form-field input:focus,.form-field textarea:focus{border-color:var(--brown-soft)}
+  .form-field textarea{resize:vertical;min-height:120px}
+
+  /* ---------- Cart drawer ---------- */
+  .overlay{position:fixed;top:0;left:0;width:100vw;height:100vh;height:100dvh;min-height:100%;background:rgba(40,23,11,.5);z-index:90;opacity:0;visibility:hidden;transition:.3s}
+  .overlay.open{opacity:1;visibility:visible}
+  .drawer{position:fixed;top:0;right:0;height:100%;width:420px;max-width:92vw;background:var(--cream);z-index:100;display:flex;flex-direction:column;transform:translateX(100%);transition:transform .35s cubic-bezier(.4,0,.2,1);box-shadow:-20px 0 60px -30px rgba(0,0,0,.5)}
+  .drawer.open{transform:translateX(0)}
+  .drawer-head{display:flex;align-items:center;justify-content:space-between;padding:24px 26px;border-bottom:1px solid var(--line)}
+  .drawer-head h3{font-size:24px;display:flex;align-items:center;gap:10px}
+  .drawer-head .x{width:34px;height:34px;border-radius:50%;display:flex;align-items:center;justify-content:center;color:var(--brown);transition:.2s}
+  .drawer-head .x:hover{background:var(--linen)}
+  .drawer-body{flex:1;overflow-y:auto;padding:8px 26px}
+  .cart-empty{text-align:center;padding:70px 20px;color:var(--muted)}
+  .cart-empty svg{width:54px;height:54px;color:var(--tan);margin:0 auto 18px}
+  .cart-empty h4{font-family:var(--serif);font-size:24px;color:var(--brown);margin-bottom:8px}
+  .cart-item{display:flex;gap:14px;padding:20px 0;border-bottom:1px solid var(--line)}
+  .cart-item img{width:78px;height:78px;border-radius:5px;object-fit:cover;background:var(--linen);flex:0 0 auto}
+  .cart-item .ci-info{flex:1;min-width:0}
+  .cart-item .ci-info .nm{font-family:var(--serif);font-size:17px;color:var(--brown);font-weight:600;line-height:1.2}
+  .cart-item .ci-info .vr{font-size:11.5px;color:var(--muted);margin:3px 0 8px;letter-spacing:.04em}
+  .ci-bottom{display:flex;align-items:center;justify-content:space-between}
+  .ci-qty{display:flex;align-items:center;border:1px solid var(--line);border-radius:3px;background:#fff}
+  .ci-qty button{width:30px;height:30px;color:var(--brown);font-size:16px}
+  .ci-qty span{width:30px;text-align:center;font-size:13px;font-weight:600;color:var(--brown)}
+  .ci-price{font-weight:600;color:var(--brown);font-size:15px}
+  .ci-remove{font-size:11px;letter-spacing:.08em;text-transform:uppercase;color:var(--rust);font-weight:600;margin-top:6px}
+  .ci-remove:hover{text-decoration:underline}
+  .drawer-foot{padding:22px 26px;border-top:1px solid var(--line);background:#fff}
+  .drawer-foot .line{display:flex;justify-content:space-between;margin-bottom:8px;font-size:14px;color:var(--muted)}
+  .drawer-foot .total{display:flex;justify-content:space-between;align-items:baseline;margin:14px 0 18px}
+  .drawer-foot .total b{font-family:var(--serif);font-size:28px;color:var(--brown);font-weight:600}
+  .drawer-foot .total span{font-size:13px;color:var(--muted)}
+  .ship-note{font-size:12px;color:var(--muted);text-align:center;margin-top:12px}
+
+  /* ---------- Toast ---------- */
+  .toast{position:fixed;bottom:28px;left:50%;transform:translateX(-50%) translateY(140%);background:var(--brown);color:var(--cream);padding:15px 26px;border-radius:4px;font-size:13.5px;font-weight:500;z-index:120;box-shadow:var(--shadow);transition:transform .4s cubic-bezier(.4,0,.2,1);display:flex;align-items:center;gap:12px;letter-spacing:.02em}
+  .toast.show{transform:translateX(-50%) translateY(0)}
+  .toast svg{width:20px;height:20px;color:var(--tan)}
+
+  /* ---------- Footer ---------- */
+  footer.site{background:var(--brown-deep);color:#d8c6ad;padding:70px 0 0}
+  .foot-top{display:grid;grid-template-columns:1.4fr 1fr 1fr 1fr;gap:40px;padding-bottom:54px;border-bottom:1px solid rgba(255,255,255,.12)}
+  .foot-brand img{height:64px;margin-bottom:20px}
+  .foot-brand p{font-size:13.5px;line-height:1.8;color:#bda988;max-width:300px;font-weight:300}
+  .foot-social{display:flex;gap:12px;margin-top:22px}
+  .foot-social a{width:40px;height:40px;border-radius:50%;border:1px solid rgba(255,255,255,.18);display:flex;align-items:center;justify-content:center;color:#d8c6ad;transition:.22s}
+  .foot-social a:hover{background:var(--tan);color:var(--brown-deep);border-color:var(--tan)}
+  .foot-social svg{width:18px;height:18px}
+  .foot-col h4{font-family:var(--sans);font-size:11.5px;letter-spacing:.2em;text-transform:uppercase;color:#fff;font-weight:700;margin-bottom:20px}
+  .foot-col a{display:block;font-size:13.5px;color:#bda988;padding:7px 0;transition:.18s;font-weight:300}
+  .foot-col a:hover{color:#fff;padding-left:5px}
+  .foot-pay{display:flex;gap:8px;flex-wrap:wrap;margin-top:8px}
+  .foot-pay .pc{height:26px;background:rgba(255,255,255,.1);border-radius:3px;display:flex;align-items:center;padding:0 8px;font-size:9px;font-weight:700;letter-spacing:.05em;color:#cdb893}
+  .foot-bottom{display:flex;align-items:center;justify-content:space-between;flex-wrap:wrap;gap:14px;padding:24px 0;font-size:12px;color:#a89072}
+  .foot-bottom a{color:#cdb893}.foot-bottom a:hover{color:#fff}
+  .ldc{color:#cdb893;font-weight:500}
+  .ldc b{color:var(--tan);font-weight:600}
+
+  /* ---------- Mobile nav ---------- */
+  .mobile-nav{position:fixed;top:0;left:0;height:100%;width:340px;max-width:88vw;background:var(--cream);z-index:100;transform:translateX(-100%);transition:transform .35s;overflow-y:auto;box-shadow:20px 0 60px -30px rgba(0,0,0,.5)}
+  .mobile-nav.open{transform:translateX(0)}
+  .mobile-nav .mn-head{display:flex;align-items:center;justify-content:space-between;padding:20px 22px;border-bottom:1px solid var(--line)}
+  .mobile-nav .mn-head img{height:42px}
+  .mobile-nav a,.mobile-nav .mn-sec{display:block;padding:15px 24px;font-size:13px;letter-spacing:.12em;text-transform:uppercase;font-weight:600;color:var(--brown);border-bottom:1px solid var(--line)}
+  .mobile-nav .mn-sub a{padding-left:38px;font-weight:500;font-size:12.5px;color:var(--ink);text-transform:none;letter-spacing:.04em;background:var(--linen)}
+  .mn-sec{color:var(--khaki) !important;font-size:10.5px !important;letter-spacing:.2em !important;background:var(--linen-2)}
+
+  /* ---------- Responsive ---------- */
+  @media(max-width:1080px){
+    .prod-grid{grid-template-columns:repeat(3,1fr)}
+    .nav-links{display:none}
+    .hamburger{display:flex}
+    .pdp{grid-template-columns:1fr;gap:36px}
+    .story .wrap{grid-template-columns:1fr}.story-img{height:340px}.story-txt{padding:50px 28px}
+    .about-grid,.contact-grid{grid-template-columns:1fr;gap:36px}
+  }
+  @media(max-width:760px){
+    .wrap{padding:0}
+    .slide-content{display:block}
+    .slide-content h1{font-size:42px}.hero{height:540px}
+    .props .wrap{grid-template-columns:1fr 1fr;gap:18px 12px}
+    .cat-grid{grid-template-columns:1fr}
+    .prod-grid{grid-template-columns:repeat(2,1fr);gap:18px 14px}
+    .card .name{font-size:16px}
+    .sec-head h2{font-size:34px}
+    .vals{grid-template-columns:1fr}
+    section.block{padding:56px 0}
+    .collection-hero h1{font-size:38px}
+    .hero-arrow{display:none}
+    .card .quick-add{transform:translateY(0);opacity:1}
+  }
+  @media(max-width:440px){.prod-grid{grid-template-columns:1fr 1fr;gap:14px}.card .name{font-size:14.5px}.slide-content h1{font-size:34px}}
+</style>
+</head>
+<body>
+
+<!-- ============ ANNOUNCEMENT ============ -->
+<div class="announce">Free shipping on orders over <b>$75</b> &nbsp;•&nbsp; Outfitting Boykin Spaniel fans since <b>2014</b></div>
+
+<!-- ============ HEADER ============ -->
+<header class="site" id="header">
+  <div class="wrap nav-row">
+    <button class="hamburger" id="hamburger" aria-label="Menu"><span></span><span></span><span></span></button>
+    <a class="brand" href="#" onclick="go('home');return false;" aria-label="Eleven Peaks Trading Co. home">
+      <img src="images/logo-color.png" alt="Eleven Peaks Trading Co." />
+    </a>
+    <nav class="nav-links">
+      <a href="#" onclick="go('home');return false;">Home</a>
+      <div class="nav-item">
+        <button class="nav-trigger">Shop <i class="chev"></i></button>
+        <div class="mega" id="megamenu">
+          <h5>Shop by Category</h5>
+          <!-- populated by JS -->
+        </div>
+      </div>
+      <a href="#" onclick="go('about');return false;">About Us</a>
+      <a href="#" onclick="go('contact');return false;">Contact</a>
+    </nav>
+    <div class="nav-actions">
+      <button class="icon-btn" id="searchToggle" aria-label="Search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      </button>
+      <button class="icon-btn" onclick="openCart()" aria-label="Cart">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+        <span class="cart-count" id="cartCount" style="display:none">0</span>
+      </button>
+    </div>
+  </div>
+  <div class="searchbar" id="searchbar">
+    <div class="wrap inner">
+      <svg viewBox="0 0 24 24" fill="none" stroke="var(--tan)" stroke-width="1.8" style="width:24px;height:24px"><circle cx="11" cy="11" r="7"/><path d="M21 21l-4.3-4.3"/></svg>
+      <input type="text" id="searchInput" placeholder="Search products, e.g. Boykinflauge, trucker, vest…" autocomplete="off" />
+      <button class="icon-btn" id="searchClose" aria-label="Close search">
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M18 6L6 18M6 6l12 12"/></svg>
+      </button>
+    </div>
+  </div>
+</header>
+
+<!-- ============ HOME ============ -->
+<main id="page-home" class="page">
+  <!-- Hero -->
+  <section class="hero" id="hero"></section>
+
+  <!-- Value props -->
+  <div class="props">
+    <div class="wrap">
+      <div class="prop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 9l1-5h16l1 5"/><path d="M4 9v9a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1V9"/><path d="M9 13h6"/></svg><div><b>Free Shipping</b><span>On orders over $75</span></div></div>
+      <div class="prop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><div><b>Made for the Field</b><span>Tested by Boykin fans</span></div></div>
+      <div class="prop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Easy Returns</b><span>30-day guarantee</span></div></div>
+      <div class="prop"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 11.5a8.4 8.4 0 0 1-.9 3.8 8.5 8.5 0 0 1-7.6 4.7 8.4 8.4 0 0 1-3.8-.9L3 21l1.9-5.7a8.4 8.4 0 0 1-.9-3.8 8.5 8.5 0 0 1 4.7-7.6 8.4 8.4 0 0 1 3.8-.9h.5a8.5 8.5 0 0 1 8 8z"/></svg><div><b>Real Support</b><span>Fellow dog people</span></div></div>
+    </div>
+  </div>
+
+  <!-- Shop by category -->
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">The Collections</div>
+        <h2>Shop by Category</h2>
+        <p>From our signature Boykinflauge™ to gear for your best four-legged friend — everything for the Boykin Spaniel life.</p>
+      </div>
+      <div class="cat-grid" id="catGrid"></div>
+    </div>
+  </section>
+
+  <!-- Featured items with tabs -->
+  <section class="block" style="background:var(--linen);padding-top:70px">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="kick">Hand-Picked</div>
+        <h2>Featured Items</h2>
+        <p>Fresh favorites across the shop. Pick a category and find your next favorite.</p>
+      </div>
+      <div class="tabs" id="featTabs"></div>
+      <div class="prod-grid" id="featGrid"></div>
+      <div class="see-more-row">
+        <button class="btn btn-outline" id="featSeeMore">See more</button>
+      </div>
+    </div>
+  </section>
+
+  <!-- Brand story -->
+  <section class="story">
+    <div class="wrap">
+      <div class="story-img" id="storyImg"></div>
+      <div class="story-txt">
+        <div class="kick">Our Story</div>
+        <h2>Born From a Love<br>of the Boykin</h2>
+        <p>Eleven Peaks Trading Co. started in 2014 with a simple idea — make gear as loyal, rugged and good-natured as the little brown dog we can't get enough of. From the duck blind to the dog park, every piece is built to be worn, used and loved.</p>
+        <p>We design our own patterns, including our signature <b style="color:var(--tan-light)">Boykinflauge™</b>, and stand behind everything we ship. Because around here, dogs aren't just dogs — they're family.</p>
+        <div class="sig">— The Eleven Peaks family</div>
+        <div style="margin-top:30px"><button class="btn btn-light" onclick="go('about')">Read Our Story</button></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Newsletter -->
+  <section class="block news">
+    <div class="wrap">
+      <div class="inner">
+        <svg class="paw" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="66" rx="22" ry="17"/><ellipse cx="28" cy="42" rx="8" ry="11"/><ellipse cx="44" cy="32" rx="8" ry="12"/><ellipse cx="60" cy="32" rx="8" ry="12"/><ellipse cx="74" cy="42" rx="8" ry="11"/></svg>
+        <h2>Join the Pack</h2>
+        <p>Be first to know about new drops, restocks and Boykin-sized deals. No spam, just good dogs.</p>
+        <form id="newsForm">
+          <input type="email" placeholder="Your email address" required />
+          <button class="btn btn-primary" type="submit">Subscribe</button>
+        </form>
+        <div class="ok hidden" id="newsOk">🐾 Welcome to the pack! Check your inbox for a treat.</div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ COLLECTION PAGE ============ -->
+<main id="page-collection" class="page hidden">
+  <section class="collection-hero">
+    <svg class="paw-bg" viewBox="0 0 100 100" fill="currentColor"><ellipse cx="50" cy="66" rx="22" ry="17"/><ellipse cx="28" cy="42" rx="8" ry="11"/><ellipse cx="44" cy="32" rx="8" ry="12"/><ellipse cx="60" cy="32" rx="8" ry="12"/><ellipse cx="74" cy="42" rx="8" ry="11"/></svg>
+    <div class="wrap">
+      <div class="crumbs"><a href="#" onclick="go('home');return false;">Home</a> &nbsp;/&nbsp; <span id="colCrumb"></span></div>
+      <h1 id="colTitle"></h1>
+      <p id="colDesc"></p>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="collection-bar">
+      <div class="count"><b id="colCount">0</b> products</div>
+      <div class="sortsel">
+        <label for="sortSel">Sort</label>
+        <select id="sortSel" onchange="renderCollectionGrid()">
+          <option value="featured">Featured</option>
+          <option value="low">Price: Low to High</option>
+          <option value="high">Price: High to Low</option>
+          <option value="az">Alphabetical: A–Z</option>
+        </select>
+      </div>
+    </div>
+    <div class="prod-grid" id="colGrid" style="margin-bottom:80px"></div>
+  </div>
+</main>
+
+<!-- ============ PRODUCT DETAIL ============ -->
+<main id="page-product" class="page hidden">
+  <div class="wrap">
+    <div class="pdp" id="pdpContent"></div>
+  </div>
+  <section class="block">
+    <div class="wrap">
+      <div class="sec-head"><div class="kick">You May Also Like</div><h2>More From the Pack</h2></div>
+      <div class="prod-grid" id="pdpRelated"></div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ ABOUT ============ -->
+<main id="page-about" class="page hidden">
+  <section class="page-hero">
+    <div class="wrap"><h1>Our Story</h1><p>Outfitting Boykin Spaniel fans with gear as loyal as the dogs we love — since 2014.</p></div>
+  </section>
+  <section class="block">
+    <div class="wrap">
+      <div class="about-grid">
+        <div class="ph" id="aboutImg"></div>
+        <div>
+          <h2>It Started With One Good Dog</h2>
+          <p>Eleven Peaks Trading Co. was founded in 2014 by a small group of Boykin Spaniel owners who couldn't find apparel and gear that celebrated their favorite breed the way it deserved. So we made our own.</p>
+          <p>What began as a few hand-printed tees has grown into a full line of apparel, headwear, pet gear and gifts — all designed in-house and built to hold up in the field, on the water and at home on the couch.</p>
+          <p>We're proudly independent, obsessively detail-driven, and we donate a portion of every sale to Boykin Spaniel rescue and health research.</p>
+        </div>
+      </div>
+      <div class="vals">
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2l8 4v6c0 5-3.5 8-8 10-4.5-2-8-5-8-10V6z"/><path d="M9 12l2 2 4-4"/></svg><h3>Built to Last</h3><p>Premium materials and our own field-tested patterns, including Boykinflauge™.</p></div>
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="8" r="4"/><path d="M4 21a8 8 0 0 1 16 0"/></svg><h3>For the Pack</h3><p>Designed by Boykin owners, for Boykin owners. We're one of you.</p></div>
+        <div class="val"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 21s-7-4.5-7-10a4 4 0 0 1 7-2.6A4 4 0 0 1 19 11c0 5.5-7 10-7 10z"/></svg><h3>Gives Back</h3><p>A portion of every order supports Boykin rescue and health research.</p></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ CONTACT ============ -->
+<main id="page-contact" class="page hidden">
+  <section class="page-hero">
+    <div class="wrap"><h1>Get In Touch</h1><p>Questions about sizing, an order, or just want to share a photo of your pup? We'd love to hear from you.</p></div>
+  </section>
+  <section class="block">
+    <div class="wrap">
+      <div class="contact-grid">
+        <div class="contact-info">
+          <h2 style="font-size:32px;margin-bottom:26px">We're Here to Help</h2>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 4h16v16H4z"/><path d="M4 7l8 6 8-6"/></svg><div><b>Email</b><span>hello@elevenpeakstradingco.com</span></div></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.9v3a2 2 0 0 1-2.2 2 19.8 19.8 0 0 1-8.6-3 19.5 19.5 0 0 1-6-6 19.8 19.8 0 0 1-3-8.6A2 2 0 0 1 4.1 2h3a2 2 0 0 1 2 1.7c.1 1 .4 1.9.7 2.8a2 2 0 0 1-.5 2.1L8.1 9.9a16 16 0 0 0 6 6l1.3-1.3a2 2 0 0 1 2.1-.4c.9.3 1.8.6 2.8.7a2 2 0 0 1 1.7 2z"/></svg><div><b>Phone</b><span>(555) 011-2014 · Mon–Fri, 9–5 ET</span></div></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M21 10c0 7-9 12-9 12s-9-5-9-12a9 9 0 0 1 18 0z"/><circle cx="12" cy="10" r="3"/></svg><div><b>Studio</b><span>Greenville, South Carolina</span></div></div>
+          <div class="row"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg><div><b>Support Hours</b><span>Monday–Friday, 9am–5pm ET</span></div></div>
+          <div class="foot-social" style="margin-top:30px">
+            <a href="https://www.facebook.com/elevenpeaksBSSmerchandise" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+            <a href="https://instagram.com/elevenpeakstradingco" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+          </div>
+        </div>
+        <div>
+          <form id="contactForm" style="background:#fff;border:1px solid var(--line);border-radius:8px;padding:34px">
+            <div class="form-field"><label>Name</label><input type="text" required placeholder="Your name" /></div>
+            <div class="form-field"><label>Email</label><input type="email" required placeholder="you@email.com" /></div>
+            <div class="form-field"><label>Subject</label><input type="text" placeholder="How can we help?" /></div>
+            <div class="form-field"><label>Message</label><textarea required placeholder="Tell us a little more…"></textarea></div>
+            <button class="btn btn-primary btn-block" type="submit">Send Message</button>
+            <div class="ok hidden" id="contactOk" style="color:var(--forest);font-weight:600;margin-top:16px;text-align:center">🐾 Thanks! We'll be in touch within one business day.</div>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<!-- ============ SEARCH RESULTS ============ -->
+<main id="page-search" class="page hidden">
+  <section class="collection-hero" style="padding:48px 0">
+    <div class="wrap">
+      <div class="crumbs"><a href="#" onclick="go('home');return false;">Home</a> &nbsp;/&nbsp; Search</div>
+      <h1 id="searchTitle">Search Results</h1>
+    </div>
+  </section>
+  <div class="wrap">
+    <div class="collection-bar"><div class="count"><b id="searchCount">0</b> products found</div></div>
+    <div class="prod-grid" id="searchGrid" style="margin-bottom:80px"></div>
+  </div>
+</main>
+
+<!-- ============ FOOTER ============ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-top">
+      <div class="foot-brand">
+        <img src="images/logo-white.png" alt="Eleven Peaks Trading Co." />
+        <p>Outfitting Boykin Spaniel fans since 2014. Apparel, gear and gifts as loyal as the dogs we love.</p>
+        <div class="foot-social">
+          <a href="https://www.facebook.com/elevenpeaksBSSmerchandise" target="_blank" rel="noopener" aria-label="Facebook"><svg viewBox="0 0 24 24" fill="currentColor"><path d="M22 12a10 10 0 1 0-11.6 9.9v-7H7.9V12h2.5V9.8c0-2.5 1.5-3.9 3.8-3.9 1.1 0 2.2.2 2.2.2v2.4h-1.2c-1.2 0-1.6.8-1.6 1.6V12h2.7l-.4 2.9h-2.3v7A10 10 0 0 0 22 12z"/></svg></a>
+          <a href="https://instagram.com/elevenpeakstradingco" target="_blank" rel="noopener" aria-label="Instagram"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1.2" fill="currentColor" stroke="none"/></svg></a>
+        </div>
+      </div>
+      <div class="foot-col">
+        <h4>Shop</h4>
+        <div id="footShop"></div>
+      </div>
+      <div class="foot-col">
+        <h4>Company</h4>
+        <a href="#" onclick="go('about');return false;">About Us</a>
+        <a href="#" onclick="go('contact');return false;">Contact</a>
+        <a href="#" onclick="go('home');return false;">Boykinflauge™</a>
+        <a href="#" onclick="alert('Demo — story page');return false;">Our Mission</a>
+      </div>
+      <div class="foot-col">
+        <h4>Help</h4>
+        <a href="#" onclick="alert('Demo — shipping info');return false;">Shipping</a>
+        <a href="#" onclick="alert('Demo — returns');return false;">Returns &amp; Exchanges</a>
+        <a href="#" onclick="alert('Demo — sizing guide');return false;">Sizing Guide</a>
+        <a href="#" onclick="alert('Demo — FAQ');return false;">FAQ</a>
+        <div class="foot-pay" style="margin-top:18px">
+          <span class="pc">VISA</span><span class="pc">MC</span><span class="pc">AMEX</span><span class="pc">DISC</span><span class="pc">PAYPAL</span><span class="pc">SHOP</span>
+        </div>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <div>© 2026 Eleven Peaks Trading Co. All rights reserved.</div>
+      <div class="ldc">Designed by <b>Lindsay Dev Creative</b></div>
+    </div>
+  </div>
+</footer>
+
+<!-- ============ CART DRAWER ============ -->
+<div class="overlay" id="overlay" onclick="closeCart()"></div>
+<aside class="drawer" id="cartDrawer" aria-label="Shopping cart">
+  <div class="drawer-head">
+    <h3><svg viewBox="0 0 24 24" fill="none" stroke="var(--brown)" stroke-width="1.7" style="width:22px;height:22px"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg> Your Cart</h3>
+    <button class="x" onclick="closeCart()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:20px;height:20px"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <div class="drawer-body" id="cartBody"></div>
+  <div class="drawer-foot" id="cartFoot"></div>
+</aside>
+
+<!-- ============ MOBILE NAV ============ -->
+<div class="mobile-nav" id="mobileNav">
+  <div class="mn-head">
+    <img src="images/logo-color.png" alt="Eleven Peaks" />
+    <button class="x icon-btn" onclick="closeMobile()" aria-label="Close"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" style="width:22px;height:22px"><path d="M18 6L6 18M6 6l12 12"/></svg></button>
+  </div>
+  <a href="#" onclick="go('home');closeMobile();return false;">Home</a>
+  <div class="mn-sec">Shop</div>
+  <div class="mn-sub" id="mobileShop"></div>
+  <a href="#" onclick="go('about');closeMobile();return false;">About Us</a>
+  <a href="#" onclick="go('contact');closeMobile();return false;">Contact</a>
+</div>
+
+<!-- ============ TOAST ============ -->
+<div class="toast" id="toast"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg><span id="toastMsg">Added to cart</span></div>
+
+<script>
+/* ============================================================
+   ELEVEN PEAKS TRADING CO. — front-end demo
+   UI + full button functionality (no order backend)
+   ============================================================ */
+
+/* ---------- Placeholder product image generator (themed SVG) ---------- */
+const PALETTES = [
+  ['#efe6d6','#d9c3a0'],['#e7dac4','#c9a876'],['#dccbb0','#b8966a'],
+  ['#f1e9db','#e0cba8'],['#e3d2b5','#bfa079'],['#ece2d0','#cbb48c']
+];
+function pawSVG(){
+  return "<ellipse cx='160' cy='205' rx='62' ry='48'/><ellipse cx='95' cy='128' rx='23' ry='31'/><ellipse cx='138' cy='100' rx='23' ry='33'/><ellipse cx='182' cy='100' rx='23' ry='33'/><ellipse cx='225' cy='128' rx='23' ry='31'/>";
+}
+function prodImg(name, idx, tag){
+  const p = PALETTES[idx % PALETTES.length];
+  const svg =
+   `<svg xmlns='http://www.w3.org/2000/svg' width='320' height='320' viewBox='0 0 320 320'>
+      <defs><linearGradient id='g' x1='0' y1='0' x2='1' y2='1'>
+        <stop offset='0' stop-color='${p[0]}'/><stop offset='1' stop-color='${p[1]}'/></linearGradient></defs>
+      <rect width='320' height='320' fill='url(#g)'/>
+      <g fill='#4a2a18' opacity='0.13' transform='translate(0,18)'>${pawSVG()}</g>
+      <text x='160' y='280' text-anchor='middle' font-family='Montserrat,sans-serif' font-size='12' letter-spacing='3' fill='#4a2a18' opacity='0.55' font-weight='600'>${(tag||'ELEVEN PEAKS').toUpperCase()}</text>
+    </svg>`;
+  return "data:image/svg+xml;charset=utf-8," + encodeURIComponent(svg);
+}
+
+/* ---------- Real product data (scraped from elevenpeakstradingco.com Shopify store) ---------- */
+/* Real product data scraped from elevenpeakstradingco.com (Shopify) */
+const REAL = {
+  boykinflauge: [
+    ['Aluminum License Plate w/ BSS® Seal & Boykinflauge™', 21.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/seallicenseplateboykinflauge.png?v=1617459650'],
+    ['BOYKINFLAUGE™ T-Shirt', 34.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/c91a32dede6169564b5864287581879c.jpg?v=1577694862'],
+    ['Boykinflauge™ Adult Hoodie', 54.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/1b828b5857821b44d542fa5184d523d8_hoody_flat-front.jpg?v=1645423917'],
+    ['BOYKINFLAUGE™ Leggings', 36.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/b8a3c3883ceda767721fba0c768ba9ae.jpg?v=1577691444'],
+    ['Boykinflauge™ Short Sleeve Shirt', 52.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/1074ea5f8361ece4a67357db67fc92a9.jpg?v=1598031670'],
+    ['BOYKINFLAUGE™ Sweatshirt-Adult', 48.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/272c24324c6ed2f631678d5ee86edb9a.jpg?v=1579672536'],
+    ['BOYKINFLAUGE™ Jogger (Sweat) Pants', 46.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/438f0dc702f36760325858be1b14f02d.jpg?v=1579671652'],
+    ['BOYKINFLAUGE™ Stainless Tumbler', 31.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/83dcb4cabf652de84e870084c40e137d.jpg?v=1577687597'],
+    ['BOYKINFLAUGE™ Snug Hoodie', 64.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/fd73e34c2951d74714a6d4a33264ff0c.jpg?v=1577697189'],
+    ['BOYKINFLAUGE™ Dog Hoodie', 44.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/245bfaeaffdfe8dc62390fbb70a9ba84.jpg?v=1577686485'],
+    ['Men\'s Comfort Zone Modal Blend Quarter Zip', 72.0, 90.0, 'https://cdn.shopify.com/s/files/1/0665/7281/files/2870S_CH_laydown.jpg?v=1775084866'],
+    ['Women\'s Pacesetter Lightweight Quarter Zip', 44.0, 55.0, 'https://cdn.shopify.com/s/files/1/0665/7281/files/2345_ESP_frontBC.jpg?v=1775081249'],
+    ['DUMPY & SINGO-The Official BSS® Plushes', 36.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/2B43D659-FD7B-4896-8DFD-992F12CEEECC.jpg?v=1733344761'],
+    ['RICHARDSON PRINTED MESH TRUCKER 112', 29.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG-3020.jpg?v=1712332075'],
+    ['Richardson 5-Panel 112 Printed Trucker', 29.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG-3019.jpg?v=1712331898'],
+    ['Men\'s Weatherproof Vintage Diamond Quilted Vest', 44.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/vest.jpg?v=1712198175'],
+    ['Expedition 60L Duffel w/ BSS® Seal', 99.99, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1890.jpg?v=1685732817'],
+    ['Polar Camel 10 oz. Insulated Tumbler w/Lid', 24.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8934.heic?v=1685639083'],
+    ['GAMEHIDE RAPID-WICK HUNT TEE', 44.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1351.jpg?v=1685743993'],
+    ['Gamehide SUPER-LIGHT HUNT SHIRT', 53.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1423.jpg?v=1685744598'],
+    ['Gamehide High Performance Hoodie', 54.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1307.jpg?v=1685743695'],
+    ['COLOR BLOCKED PACK-N-GO®', 44.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1975.jpg?v=1685736692'],
+    ['Gamehide WOMEN\'S DAY BREAK JACKET', 49.0, 89.99, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1800.jpg?v=1685745308'],
+    ['Weatherproof - Women\'s Vintage Diamond Quilted Vest', 44.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1663.jpg?v=1685733968'],
+    ['Kitty Hawk Performance Long Sleeve Fishing Shirt', 46.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1896.jpg?v=1685716448'],
+  ],
+  headwear: [
+    ['Authentic Wildlife Cap w/ BSS® Seal', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4424.JPG?v=1533746488'],
+    ['Bayside Knit Beanie 8" w/ BSS® Silhouette', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/orangebeanie1.jpg?v=1488685305'],
+    ['Blaze Cap w/ Waxed Cotton Canvas Visor', 22.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3442_burned_copy_2daca8d3-d876-493e-a4ce-97dcf908fe09.png?v=1488685031'],
+    ['Blaze/Mossy Oak Cap w/ BSS® Seal', 24.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4445.jpg?v=1488685380'],
+    ['Brown & Pink Plaid Cap w/ BSS® Silhouette', 21.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_f7e30049-0196-4cb3-bb51-09f1fc1aefe8.png?v=1618521291'],
+    ['Camo Garment Washed Twill Cap', 23.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/HatCamo.png?v=1488685470'],
+    ['Camo Knit Beanie', 12.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4490.jpg?v=1488685385'],
+    ['Frayed Ladies\' Camouflage Cap', 21.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/hathotpinkcamo.jpg?v=1488685163'],
+    ['Garment Washed Twill Cap', 21.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/HatNavy.png?v=1513067740'],
+    ['Garment Washed Twill Visor', 23.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3445_burned_copy_b2a101b7-c257-4d88-8211-e5d3fbcecab4.png?v=1488685601'],
+    ['Heavy Garment Washed, Mesh Back', 21.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/hatmeshtanolive.jpg?v=1488685853'],
+    ['Knit Beanie 8" w/ BSS Silhouette', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/brownbeanie2.jpg?v=1488685308'],
+    ['Ladies\' Realtree Pink Camo Beanie w/ BSS Silhouette', 12.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/pinkbeanie1.jpg?v=1488685308'],
+    ['Richardson Camo/Mesh Trucker Cap w/BSS® Seal-Embroidered', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_71158a59-d80b-4d06-80ac-42ecd47cc34e.jpg?v=1618511484'],
+    ['Richardson Camo/Mesh Trucker Cap w/BSS® Seal-Leather Patch', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/Kryptek_Highlander_-_Buck_Front_High_leather.jpg?v=1647967631'],
+    ['Richardson Chunk Twist Cuffed Beanie 141R', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG-1621.jpg?v=1702773516'],
+    ['Richardson Marled Beanie 130', 22.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG-1622.jpg?v=1702773430'],
+    ['Two-tone Mesh Back BSS® Seal Cap', 22.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/p100007548-2.jpg?v=1618431545'],
+    ['Unisex Garment Washed Twill Cap w/ BSS®', 18.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/NavyWhite.jpg?v=1488685321'],
+    ['Waxed Cotton Canvas Cap', 25.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3438_burned_copy.png?v=1618521555'],
+    ['WOMEN\'S SIDEKICK HOODIE w/ BOYKINS', 56.0, 70.0, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1463.jpg?v=1685657611'],
+    ['Polar Camel Slim Beverage Holder', 22.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8905.heic?v=1685641291'],
+    ['Polar Camel Standard Insulated Beverage Holder', 22.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8923.heic?v=1685643506'],
+    ['Polar Camel 20 oz. Insulated Tumbler w/Lid', 29.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8946.heic?v=1685640435'],
+    ['X BSS® Logo Short Sleeve T-shirt', 25.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/custom_resized_63800b76-9b56-4b03-b5a1-47990bd2eb4d.jpg?v=1685645333'],
+  ],
+  womens: [
+    ['Boykin Spaniel Mom Club T-Shirt', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_82380dcb-8167-4c52-afed-e07aab31bab5.jpg?v=1618792387'],
+    ['COLUMBIA Ladies\' Bahama LS Fishing Shirt', 49.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/ClearBlue1.jpg?v=1646878683'],
+    ['COLUMBIA Ladies\' Bahama SS Fishing Shirt', 34.46, 55.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/foxglove.png?v=1488685120'],
+    ['Columbia Ladies\' Benton Springs Full-Zip Fleece Jacket', 25.0, 41.21, 'https://cdn.shopify.com/s/files/1/0665/7281/products/ColumbiaWomensFleeceCream.jpg?v=1488685293'],
+    ['Columbia Women\'s Crescent Valley Half-Zip Microfleece Pullover', 20.0, 30.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/CO_6817_ROU_HR.jpg?v=1488685181'],
+    ['Ladies Pathfinder Jacket W/ BSS® Silhouette', 42.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_2574.jpg?v=1522127955'],
+    ['Lady Gamebird Vest w/ BSS® Silhouette', 48.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/ladygamebirdvest.jpg?v=1579139144'],
+    ['Long Sleeve Shooter\'s Tee', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/shootinglstshirt_e147a913-4074-43b0-9b5c-b820eb50e705.jpg?v=1488685469'],
+    ['PACK-N-GO® PULLOVER', 41.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1904.jpg?v=1685738360'],
+    ['Peeking Boykin Long-sleeve T-shirt', 29.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_f408b9ed-bdf5-4142-8bf2-e2e58b6bd088.jpg?v=1637171100'],
+    ['Storm Creek Ladies\' Outdoor Lightweight Long Sleeve Shirt w/ Silhouette', 18.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/StormCreek_Mint.jpg?v=1491094750'],
+    ['Women\'s Bailey Vest in Driftwood w/ BSS® Silhouette', 66.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/lb8221_lb8221_bailey_driftwood_copy.jpg?v=1578169003'],
+    ['WOMEN\'S BAR HARBOR PULLOVER W/BSS® Silhouette', 45.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/Bluebarharbor.png?v=1619029176'],
+    ['Women\'s Clearwater RootS73 Long Sleeve Shirt w/ BSS Silhouette', 33.15, 44.21, 'https://cdn.shopify.com/s/files/1/0665/7281/products/ms.jpeg?v=1500545239'],
+    ['WOMEN\'S LONG SLEEVE FISHING T-SHIRT W/BSS® LOGOS', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1734.jpg?v=1685718759'],
+    ['WOMEN\'S NEW ENGLANDER® RAIN JACKET W/BSS® Silhouette', 62.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/5996-580-f-lg-hr_copy.jpg?v=1552276517'],
+    ['Women\'s Newport Fleece Pullover w/ BSS® Silhouette', 37.46, 49.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/5876-228-f-lg_copy.jpg?v=1522200273'],
+    ['WOMEN\'S NEWPORT FLEECE VEST', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/5974435_061120151557.png?v=1648226582'],
+    ['WOMEN\'S NEWPORT FULL ZIP FLEECE JACKET W/BSS® Seal', 64.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/5978.jpg?v=1552274185'],
+    ['WOMEN\'S QUILTED BOSTON FLIGHT JACKET', 62.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1687.jpg?v=1685731508'],
+    ['Women\'s Vintage Chambray Long Sleeve Shirt', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/WeatherproofStone.jpg?v=1646930607'],
+    ['Boykin & Co. Christmas Sweatshirt', 39.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/9E94404C-34D8-4685-8FEC-8A9115850FC4.jpg?v=1639590970'],
+    ['BSS® Fleece Crewneck Sweatshirt', 45.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1383.jpg?v=1685664094'],
+    ['BSS® Fleece Hoodie', 50.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1711.jpg?v=1685693147'],
+    ['North Dakota Hunting Hoodie', 42.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/10213_4646_1.jpg?v=1510861439'],
+  ],
+  mens: [
+    ['BERETTA HALF-ZIP FLEECE W/BSS® SILHOUETTE', 59.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/berettachoc.jpg?v=1552539687'],
+    ['Bow Ties w/ BSS® Silhouette', 16.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4714.JPG?v=1500526965'],
+    ['Camouflage Long Sleeve Tee w/ BOYKINS', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/CamoShirt.jpg?v=1488685314'],
+    ['COLUMBIA Men\'s Bahama SS Fishing Shirt', 49.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/GulfStream.jpg?v=1646879288'],
+    ['Hilton-Baja Short Sleeve Fishing Shirt w/ BSS® Silhouette', 44.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/52015_f_fl_copy.jpg?v=1523551972'],
+    ['Lightweight Field Shirt w/ BSS® Silhouette', 49.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/PLS-LDR-1-640x940.jpg?v=1523551995'],
+    ['Long Sleeve Camo Performance Tee w/ BSS® Seal', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/33660_f_fm.jpg?v=1506663394'],
+    ['LONG SLEEVE FISHING T-SHIRT W/BSS® LOGOS', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_2026.jpg?v=1685656823'],
+    ['Men\'s Clearwater RootS73 Long Sleeve Shirt w/ BSS Silhouette Embroidery', 47.21, 62.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/ms-6.jpeg?v=1500544731'],
+    ['MEN\'S WEATHERPROOF VINTAGE CAMO SHIRT W/BSS® SILHOUETTE', 36.95, 51.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/VintageCamoGreen.jpg?v=1552282044'],
+    ['Shooting Shirt-Camouflage', 34.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3572.JPG?v=1488685051'],
+    ['Puppy on the Pier Hoodie', 42.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/10213_4658_1.jpg?v=1510818692'],
+    ['Vintage Camo Crewneck Sweatshirt', 23.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/LATvintagecamo.jpg?v=1671041557'],
+    ['DeerCamp Fleece Full-zip Hoodie W/ BSS® Silhouette', 25.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/EBHOR1-640x940_copy.jpg?v=1522128142'],
+    ['Gamehide Performance SS T-shirt Mossy Oak®', 24.94, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1594.jpg?v=1685742883'],
+    ['GameHide Realtree® T-shirt', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1601.jpg?v=1685743322'],
+    ['Hunt Camp Full Zip Jacket-Blaze W/ BSS® Silhouette', 34.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_2575.jpg?v=1522128277'],
+    ['TickKey', 6.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3399_burned_copy.png?v=1488685034'],
+    ['X BSS® Logo Long Sleeve T-shirt', 30.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1253.jpg?v=1685656461'],
+    ['Crystal Whiskey Glasses w/ BSS® Seal', 55.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8895.heic?v=1685630648'],
+    ['Crystal Red Wine Glasses w/ BSS® Seal', 55.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8898.heic?v=1685631152'],
+    ['Crystal White Wine Glasses w/ BSS® Seal', 55.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8903.heic?v=1685631359'],
+    ['Kids Harborside Mélange French Terry Crew', 21.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/melangetoddlerolive.jpg?v=1671044840'],
+    ['Dri-Duck Waxed Backpack w/BSS® Seal', 69.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/Driduckbackpack.jpg?v=1646878389'],
+    ['Trailer Hitch Cover', 21.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/BB74D081-6877-4D6A-A854-D461881F6361.png?v=1617457383'],
+  ],
+  pets: [
+    ['Collapsible Pet Bowl w/ BSS® Seal', 14.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_5ceeb175-9e87-4a25-8a8a-e0dbc2c376a3.jpg?v=1506889290'],
+    ['Mendota Double Braid Collar w/ Satin Hardware', 10.95, 15.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_31801.jpg?v=1488685261'],
+    ['Mendota Double Braid Dog Collar', 10.95, 15.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_31171.jpg?v=1488685224'],
+    ['Mendota Double Braid Junior Dog Collar', 7.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_31116.jpg?v=1488685243'],
+    ['Mendota EZ Trainer', 15.95, 20.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/Mendota00906.jpg?v=1438319172'],
+    ['Mendota Snap Leash', 11.95, 16.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_30970.jpg?v=1488685237'],
+    ['Mendota Traffic Lead for Dog', 9.95, 13.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_31282.jpg?v=1488685165'],
+    ['Mendota Training Tab', 7.95, 10.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_31624.jpg?v=1488685259'],
+    ['Mendota Visi-Vest', 20.95, 25.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/d_31528.jpg?v=1438312868'],
+    ['SportDog Natural Canvas Puppy Dummy - 1pk', 7.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/Canvas_pup_nbg_med.JPG?v=1506641646'],
+    ['SportDog White Plastic Dummy', 9.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/WR_single_nbg_med.JPG?v=1506642250'],
+    ['Training Dummy Throw Ropes by Mendota', 3.5, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/04103_nbg_med.JPG?v=1506642458'],
+    ['8-Pack Frosted Cups w/ BSS® Seal', 14.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4235.jpg?v=1617316450'],
+    ['High Performance Wicking Upland T-Shirt w/ BSS® Silhouette', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/UplandPerformanceTee.jpg?v=1579142478'],
+    ['Car Coasters-Rubber', 5.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_9834.jpg?v=1575843457'],
+    ['Car Coasters-Sandstone', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_9833.jpg?v=1575843048'],
+    ['Merry Boykin Christmas Pillow Cover', 16.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_9838.jpg?v=1575840913'],
+    ['Real Tree Max-5 Structured Cap', 24.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_214ce1a9-b295-4034-ab32-8c2ebf975532.jpg?v=1562445907'],
+    ['Mossy Structured Cap W/Seal', 25.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/5AD94153-3260-4B75-8070-10ED16B7F6FD.jpg?v=1617460135'],
+    ['Ladies Flip Flops w/ BSS® Silhouette', 48.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_38c89b86-8365-4609-bc80-68a67a36765c.jpg?v=1524090529'],
+    ['Poolside Palm Drink Wrap w/ BSS® Silhouette', 6.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/m245vl-ppalm_01.jpg?v=1522206022'],
+    ['GameHide Shooting Shirt w/ BSS® Silhouette', 46.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/UplandShirt.jpg?v=1579143443'],
+    ['Briar Proof Vest w/ BSS® Silhouette', 39.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_2572.jpg?v=1579139626'],
+    ['Long Sleeve BSS® Seal Performance T-Shirt - Blaze', 25.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/4049L.jpg?v=1565235181'],
+    ['Seersucker Drink Wrap w/ BSS® Silhouette', 6.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4694.JPG?v=1501904307'],
+  ],
+  gifts: [
+    ['"Be the Person" Boykin Pillow Cover', 16.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_9841.jpg?v=1575840477'],
+    ['2.5" Round Keychain w/ BSS® Seal', 5.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/KeyChain.png?v=1663610622'],
+    ['2.5" Round Magnet w/ BSS® Seal', 2.95, 3.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/16753998728ef4573f7639eea954d43d.jpeg?v=1663614903'],
+    ['4" Sandstone Coaster', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_7995.JPG?v=1491188205'],
+    ['Ame LuLu Tote w/ BSS® Silhouette', 48.71, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/LuluTote_Coral.jpg?v=1491092801'],
+    ['Boykin Christmas Garden Flag', 25.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_9846.jpg?v=1575842015'],
+    ['Boykin Spaniel Kitchen Apron', 24.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_9843.jpg?v=1575839637'],
+    ['BSS® Silhouette Charm', 29.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_4689.JPG?v=1500558940'],
+    ['Burlap Can Cooler w/ BSS® Silhouette', 6.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/74554db6aa0e1df8666a07d1fd15248a.jpeg?v=1488686545'],
+    ['Computer Mouse Pad w/ BSS® Seal', 9.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/ComputerMousePad.jpg?v=1491100927'],
+    ['Garden Flag', 16.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_6676.JPG?v=1488685346'],
+    ['GoVino Beer Glass w/ Silhouette-Set of 2 Dishwasher Safe', 15.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/8c4fea87910db0d098a106232c599f79_7931fd4d-383e-41fe-ba12-0d421050eb17.jpeg?v=1488685869'],
+    ['Insulated Neoprene Zipper Bottle Cooler w/ BSS Seal', 10.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/KoozieOrange.png?v=1488685043'],
+    ['Peeking Boykin Wine Tumbler', 15.95, 21.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_fdf7cf4a-baaf-4a3c-a0eb-bfdf1783d66e.jpg?v=1637178820'],
+    ['Pine Canyon Leather Duffel', 225.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_2000.jpg?v=1685719739'],
+    ['Set of 4 Rubber Coasters', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/RubberCoasters.png?v=1488684995'],
+    ['Star Canyon Leather Keychain', 9.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3860.JPG?v=1488685189'],
+    ['Walnut Canyon Leather ID Pouch/Keychain', 18.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/IMG_3864.JPG?v=1488685091'],
+    ['Boykin Spaniel Vinyl Decal', 12.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/boykinhead.jpg?v=1488685099'],
+    ['BSS® Decal-Boykin w/ Orange Collar', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_9601a666-b321-4d62-a5a6-f1085e546392.jpg?v=1615230985'],
+    ['BSS® Decal-Girl-Kin', 8.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/decal7.jpg?v=1488685478'],
+    ['BSS® Decal-Homegrown', 9.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/decal3.jpg?v=1488685292'],
+    ['BSS® Decal-Official Seal', 4.95, 9.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/decal1.jpg?v=1488686006'],
+    ['BSS® Decal-Original SC Dog', 9.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/decal4.jpg?v=1488685484'],
+    ['BSS® Decal-South Carolina\'s Own', 9.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/decal2.jpg?v=1488685477'],
+  ],
+  tshirts: [
+    ['Baby Hershey by the Birch', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/10210_4555_1_cb22b4c2-5a74-415e-881b-6f019dc70ba2.jpg?v=1564624265'],
+    ['BOYKINFLAUGE™ T-Shirt', 34.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/c91a32dede6169564b5864287581879c.jpg?v=1577694862'],
+    ['BSS® Dock Dogs T-shirt-Long Sleeve', 32.2, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/back.jpg?v=1488685332'],
+    ['BSS® Dock Dogs T-shirt-Short Sleeve', 29.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/10214_4680_1.jpg?v=1488685335'],
+    ['Dara Memorial T-shirt to Benefit OLBD', 25.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/back_b5d65957-03a8-4adf-8e34-78ea892901b9.jpg?v=1488915691'],
+    ['Don\'t Stop Retrievin\' Long-sleeve T-shirt', 29.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/arcticbelievin.jpg?v=1562219547'],
+    ['Eleven Peaks Boykin & UTV SS T-Shirt w/ Pocket', 19.95, 29.95, 'https://cdn.shopify.com/s/files/1/0665/7281/products/WebsiteProof_e9f6210b-d2da-4688-b899-7879746c57da.jpg?v=1488685283'],
+    ['Long Sleeve BSS® Seal Performance T-Shirt - Blaze', 25.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/4049L.jpg?v=1565235181'],
+    ['Long Sleeve Camo Performance Tee w/ BSS® Seal', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/33660_f_fm.jpg?v=1506663394'],
+    ['Long Sleeve Shooter\'s Tee', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/shootinglstshirt_e147a913-4074-43b0-9b5c-b820eb50e705.jpg?v=1488685469'],
+    ['North Dakota Hunting T-Shirt', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/back_ef82cae9-d628-4cfd-b167-e2bf783d1d83.jpg?v=1510860107'],
+    ['Peeking Boykin Long-sleeve T-shirt', 29.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/image_f408b9ed-bdf5-4142-8bf2-e2e58b6bd088.jpg?v=1637171100'],
+    ['Puppy on the Pier', 28.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/products/back_98c1ef5d-0219-4b22-81c8-e97940ad1eaf.jpg?v=1507572471'],
+    ['WOMEN\'S LONG SLEEVE FISHING T-SHIRT W/BSS® LOGOS', 26.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1734.jpg?v=1685718759'],
+    ['X BSS® Logo Long Sleeve T-shirt', 30.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1253.jpg?v=1685656461'],
+    ['X BSS® Logo Short Sleeve T-shirt', 25.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/custom_resized_63800b76-9b56-4b03-b5a1-47990bd2eb4d.jpg?v=1685645333'],
+    ['Men\'s Comfort Zone Modal Blend Quarter Zip', 72.0, 90.0, 'https://cdn.shopify.com/s/files/1/0665/7281/files/2870S_CH_laydown.jpg?v=1775084866'],
+    ['Women\'s Pacesetter Lightweight Quarter Zip', 44.0, 55.0, 'https://cdn.shopify.com/s/files/1/0665/7281/files/2345_ESP_frontBC.jpg?v=1775081249'],
+    ['DUMPY & SINGO-The Official BSS® Plushes', 36.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/2B43D659-FD7B-4896-8DFD-992F12CEEECC.jpg?v=1733344761'],
+    ['RICHARDSON PRINTED MESH TRUCKER 112', 29.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG-3020.jpg?v=1712332075'],
+    ['Richardson 5-Panel 112 Printed Trucker', 29.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG-3019.jpg?v=1712331898'],
+    ['Men\'s Weatherproof Vintage Diamond Quilted Vest', 44.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/vest.jpg?v=1712198175'],
+    ['Expedition 60L Duffel w/ BSS® Seal', 99.99, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1890.jpg?v=1685732817'],
+    ['Polar Camel 10 oz. Insulated Tumbler w/Lid', 24.95, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/IMG_8934.heic?v=1685639083'],
+    ['GAMEHIDE RAPID-WICK HUNT TEE', 44.0, null, 'https://cdn.shopify.com/s/files/1/0665/7281/files/20230521-IMG_1351.jpg?v=1685743993'],
+  ],
+};
+const REAL_SLIDES = ['https://elevenpeakstradingco.com/cdn/shop/t/4/assets/slideshow_1.jpg','https://elevenpeakstradingco.com/cdn/shop/t/4/assets/slideshow_2.jpg','https://elevenpeakstradingco.com/cdn/shop/t/4/assets/slideshow_3.jpg','https://elevenpeakstradingco.com/cdn/shop/t/4/assets/slideshow_4.jpg','https://elevenpeakstradingco.com/cdn/shop/t/4/assets/slideshow_5.jpg'];
+
+let _id = 0;
+const META = {
+  boykinflauge:{title:'Boykinflauge\u2122', crumb:'Boykinflauge\u2122', tag:'Boykinflauge', desc:'Our signature camo pattern, built from the silhouette of the dog we love \u2014 on everything from hoodies to dog bandanas.'},
+  headwear:{title:'Headwear', crumb:'Headwear', tag:'Headwear', desc:'Truckers, dad hats, beanies and fitted caps \u2014 topped off with the Boykin seal.'},
+  womens:{title:"Women's Apparel", crumb:"Women's Apparel", tag:"Women's", desc:'Soft, field-ready styles cut for women \u2014 tees, quarter zips, flannels and more.'},
+  mens:{title:"Men's Apparel", crumb:"Men's Apparel", tag:"Men's", desc:'Tees, polos, flannels and outerwear built for the blind, the boat and the backyard.'},
+  pets:{title:'Pet Gear & Supplies', crumb:'Pet Gear & Supplies', tag:'Pet Gear', desc:'Collars, leashes, training gear and the official BSS plushes \u2014 everything for your best friend.'},
+  gifts:{title:'Gifts & Accessories', crumb:'Gifts & Accessories', tag:'Gifts', desc:'Drinkware, decals, plushes and more \u2014 the perfect gift for any Boykin lover.'},
+  tshirts:{title:'T-Shirts', crumb:'T-Shirts', tag:'T-Shirt', desc:'Our softest, best-selling tees \u2014 Boykin seals, scripts and field-day graphics.'}
+};
+const COLLECTIONS = {};
+Object.keys(META).forEach(k=>{
+  const m=META[k];
+  const products=(REAL[k]||[]).map((r,i)=>{
+    const name=r[0], price=r[1], compare=r[2], img=r[3];
+    let badge = (compare&&compare>price)?'sale':(i===0?'best':(i===5?'new':null));
+    return {id:++_id, name, price, compare:(compare&&compare>price)?compare:null, badge, img, cat:m.title, tag:m.tag};
+  });
+  COLLECTIONS[k]=Object.assign({}, m, {products});
+});
+const NAV_CATS = ['boykinflauge','headwear','womens','mens','pets','gifts'];
+
+/* Featured tabs: T-shirts, Women's, Men's, Pets, Gifts (12 each) */
+const FEAT_TABS = [
+  {key:'tshirts', label:'T-Shirts'},
+  {key:'womens',  label:"Women's Apparel"},
+  {key:'mens',    label:"Men's Apparel"},
+  {key:'pets',    label:'Pets'},
+  {key:'gifts',   label:'Gifts & Accessories'}
+];
+const ALL_PRODUCTS = [];
+NAV_CATS.concat(['tshirts']).forEach(k=>{ COLLECTIONS[k].products.forEach(p=>ALL_PRODUCTS.push(Object.assign({colKey:k},p))); });
+
+
+/* ---------- Helpers ---------- */
+const $ = s=>document.querySelector(s);
+const money = n=> '$'+ (Number.isInteger(n)? n : n.toFixed(2));
+function starsHTML(){ let s=''; for(let i=0;i<5;i++) s+="<svg viewBox='0 0 24 24' fill='currentColor'><path d='M12 2l3 6.3 6.9 1-5 4.9 1.2 6.8L12 18l-6.1 3 1.2-6.8-5-4.9 6.9-1z'/></svg>"; return s; }
+
+/* ---------- Render product card ---------- */
+function cardHTML(p, colKey){
+  const onSale = p.compare && p.compare>p.price;
+  let badge='';
+  if(p.badge==='sale'||onSale) badge="<span class='badge sale'>Sale</span>";
+  else if(p.badge==='new') badge="<span class='badge new'>New</span>";
+  else if(p.badge==='best') badge="<span class='badge best'>Bestseller</span>";
+  return `<article class="card" onclick="openProduct(${p.id})">
+    <div class="imgwrap">
+      ${badge}
+      <img src="${p.img}" alt="${p.name}" loading="lazy"/>
+      <div class="quick-add">
+        <button class="btn btn-primary btn-block" onclick="event.stopPropagation();addToCart(${p.id})">Add to Cart</button>
+      </div>
+    </div>
+    <div class="body">
+      <div class="cat-tag">${p.tag}</div>
+      <div class="stars">${starsHTML()}</div>
+      <h3 class="name">${p.name}</h3>
+      <div class="price-row">
+        <span class="price ${onSale?'on-sale':''}">${money(p.price)}</span>
+        ${onSale?`<span class="compare">${money(p.compare)}</span>`:''}
+      </div>
+    </div>
+  </article>`;
+}
+function findProduct(id){ return ALL_PRODUCTS.find(p=>p.id===id); }
+
+/* ---------- Build navigation menus ---------- */
+function buildNav(){
+  const labels = NAV_CATS.map(k=>({k, t:COLLECTIONS[k].title}));
+  $('#megamenu').innerHTML = "<h5>Shop by Category</h5>" + labels.map(l=>
+    `<a href="#" onclick="go('collection','${l.k}');return false;"><span class="dot"></span>${l.t}</a>`).join('');
+  $('#footShop').innerHTML = labels.map(l=>
+    `<a href="#" onclick="go('collection','${l.k}');return false;">${l.t}</a>`).join('');
+  $('#mobileShop').innerHTML = labels.map(l=>
+    `<a href="#" onclick="go('collection','${l.k}');closeMobile();return false;">${l.t}</a>`).join('');
+}
+
+/* ---------- Category tiles (home) ---------- */
+function buildCatTiles(){
+  $('#catGrid').innerHTML = NAV_CATS.map((k,i)=>{
+    const c=COLLECTIONS[k]; const p=PALETTES[i%PALETTES.length];
+    const hero=(c.products[0]&&c.products[0].img)||'';
+    return `<div class="cat-card" onclick="go('collection','${k}')">
+      <div class="bg" style="background:#e7dac4 url('${hero}') center/cover"></div>
+      <div class="ov"></div>
+      <div class="label">
+        <h3>${c.title}</h3>
+        <span>Shop now
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </span>
+      </div>
+    </div>`;
+  }).join('');
+}
+
+/* ---------- Hero slides ---------- */
+const SLIDES = [
+  {ey:'Since 2014', h:'Outfitting Boykin<br>Spaniel Fans', p:'Apparel, gear and gifts as loyal, rugged and good-natured as the little brown dog we love.', cta:'Shop New Arrivals', act:"go('collection','boykinflauge')", grad:'linear-gradient(120deg,#5a3a24,#8a6240)'},
+  {ey:'Signature Pattern', h:'Meet Boykinflauge™', p:'Our own camo pattern, built from the silhouette of the breed — on hoodies, hats, koozies and more.', cta:'Shop the Collection', act:"go('collection','boykinflauge')", grad:'linear-gradient(120deg,#4a3a2a,#6b5a3e)'},
+  {ey:'Field to Couch', h:'Built for<br>the Field', p:'Men’s and women’s apparel that holds up in the blind, on the boat and at home.', cta:'Shop Apparel', act:"go('collection','mens')", grad:'linear-gradient(120deg,#3e4a38,#6b6244)'},
+  {ey:'For Your Best Friend', h:'Gear for Your<br>Good Dog', p:'Collars, leashes, training gear and the official DUMPY & SINGO plushes.', cta:'Shop Pet Gear', act:"go('collection','pets')", grad:'linear-gradient(120deg,#5a4326,#8a6a3e)'},
+  {ey:'Give the Best', h:'Gifts for Every<br>Boykin Lover', p:'Drinkware, decals, prints and more — the perfect gift for the dog person in your life.', cta:'Shop Gifts', act:"go('collection','gifts')", grad:'linear-gradient(120deg,#4a2a18,#7a5436)'}
+];
+let heroIdx=0, heroTimer=null;
+function buildHero(){
+  const el=$('#hero');
+  el.innerHTML = SLIDES.map((s,i)=>`
+    <div class="slide ${i===0?'active':''}" data-i="${i}">
+      <div class="bg" style="background:${s.grad}"></div>
+      <div class="bg" style="background:url('${REAL_SLIDES[i]||''}') center/cover"></div>
+      <div class="scrim"></div>
+      <div class="wrap"><div class="slide-content">
+        <div class="ey">${s.ey}</div>
+        <h1>${s.h}</h1>
+        <p>${s.p}</p>
+        <button class="btn btn-light" onclick="${s.act}">${s.cta}</button>
+      </div></div>
+    </div>`).join('') +
+    `<button class="hero-arrow prev" onclick="heroGo(${'-1'})" aria-label="Previous"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M15 18l-6-6 6-6"/></svg></button>
+     <button class="hero-arrow next" onclick="heroGo(1)" aria-label="Next"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M9 6l6 6-6 6"/></svg></button>
+     <div class="hero-ctrl">${SLIDES.map((s,i)=>`<div class="hero-dot ${i===0?'active':''}" onclick="heroSet(${i})"></div>`).join('')}</div>`;
+  startHero();
+}
+function heroSet(i){
+  const slides=$('#hero').querySelectorAll('.slide');
+  const dots=$('#hero').querySelectorAll('.hero-dot');
+  slides[heroIdx].classList.remove('active'); dots[heroIdx].classList.remove('active');
+  heroIdx=(i+SLIDES.length)%SLIDES.length;
+  slides[heroIdx].classList.add('active'); dots[heroIdx].classList.add('active');
+}
+function heroGo(d){ heroSet(heroIdx+d); restartHero(); }
+function startHero(){ heroTimer=setInterval(()=>heroSet(heroIdx+1),6000); }
+function restartHero(){ clearInterval(heroTimer); startHero(); }
+
+/* ---------- Featured tabs ---------- */
+let featKey='tshirts';
+function buildFeatTabs(){
+  $('#featTabs').innerHTML = FEAT_TABS.map(t=>
+    `<button class="tab ${t.key===featKey?'active':''}" data-key="${t.key}" onclick="setFeat('${t.key}')">${t.label}</button>`).join('');
+  renderFeat();
+}
+function setFeat(k){
+  featKey=k;
+  document.querySelectorAll('#featTabs .tab').forEach(b=>b.classList.toggle('active',b.dataset.key===k));
+  renderFeat();
+}
+function renderFeat(){
+  const items = COLLECTIONS[featKey].products.slice(0,12);
+  $('#featGrid').innerHTML = items.map(p=>cardHTML(p,featKey)).join('');
+  const lbl = FEAT_TABS.find(t=>t.key===featKey).label;
+  $('#featSeeMore').textContent = 'See more '+lbl;
+  $('#featSeeMore').onclick = ()=>go('collection',featKey);
+}
+
+/* ---------- Collection page ---------- */
+let curCol='boykinflauge';
+function openCollection(key){
+  curCol=key;
+  const c=COLLECTIONS[key];
+  $('#colTitle').textContent=c.title;
+  $('#colCrumb').textContent=c.crumb;
+  $('#colDesc').textContent=c.desc;
+  $('#sortSel').value='featured';
+  renderCollectionGrid();
+}
+function renderCollectionGrid(){
+  const c=COLLECTIONS[curCol];
+  let list=c.products.slice();
+  const sort=$('#sortSel').value;
+  if(sort==='low') list.sort((a,b)=>a.price-b.price);
+  else if(sort==='high') list.sort((a,b)=>b.price-a.price);
+  else if(sort==='az') list.sort((a,b)=>a.name.localeCompare(b.name));
+  $('#colCount').textContent=list.length;
+  $('#colGrid').innerHTML=list.map(p=>cardHTML(p,curCol)).join('');
+}
+
+/* ---------- Product detail ---------- */
+const SIZES=['XS','S','M','L','XL','2XL'];
+const COLORS=[['Chestnut','#6b4329'],['Stone','#cbb48c'],['Forest','#3e4a38'],['Sand','#e0caa6']];
+let pdpSel={size:'M', color:0, qty:1, id:null};
+function openProduct(id){
+  const p=findProduct(id); if(!p) return;
+  pdpSel={size:'M',color:0,qty:1,id:id};
+  const onSale=p.compare&&p.compare>p.price;
+  const apparel=/Tee|Hoodie|Shirt|Polo|Vest|Jacket|Zip|Pullover|Sweatshirt|Henley|Tank|Joggers|Shorts|Flannel|Leggings|Crew|Dress|Apparel|Top|Cardigan/.test(p.name);
+  const gallery=[p.img];
+  $('#pdpContent').innerHTML=`
+    <div class="pdp-gallery">
+      <div class="main"><img id="pdpMain" src="${gallery[0]}" alt="${p.name}"/></div>
+      <div class="pdp-thumbs">${gallery.map((g,i)=>`<img src="${g}" class="${i===0?'active':''}" onclick="pdpThumb(this,'${g}')"/>`).join('')}</div>
+    </div>
+    <div class="pdp-info">
+      <div class="crumbs" style="color:var(--tan);margin-bottom:14px"><a href="#" style="color:var(--tan)" onclick="go('collection','${p.colKey}');return false;">${p.cat}</a></div>
+      <div class="cat-tag">${p.tag}</div>
+      <h1>${p.name}</h1>
+      <div class="pdp-rate"><div class="stars">${starsHTML()}</div> <span>4.9 · 128 reviews</span></div>
+      <div class="pdp-price">
+        <span class="price ${onSale?'on-sale':''}">${money(p.price)}</span>
+        ${onSale?`<span class="compare">${money(p.compare)}</span> <span class="badge sale" style="position:static">Save ${money(p.compare-p.price)}</span>`:''}
+      </div>
+      <p class="pdp-desc">Designed in-house and built to last, the ${p.name} is a Boykin-fan favorite. Premium materials, a comfortable everyday fit and details that hold up from the duck blind to the dog park. A portion of every order supports Boykin Spaniel rescue.</p>
+      <span class="opt-label">Color — <span id="colorName">${COLORS[0][0]}</span></span>
+      <div class="swatches">${COLORS.map((c,i)=>`<div class="swatch ${i===0?'active':''}" style="background:${c[1]}" title="${c[0]}" onclick="pdpColor(${i})"></div>`).join('')}</div>
+      ${apparel?`<span class="opt-label">Size</span>
+      <div class="sizes">${SIZES.map(s=>`<button class="size-opt ${s==='M'?'active':''}" onclick="pdpSize(this,'${s}')">${s}</button>`).join('')}</div>`:''}
+      <div class="qty-add">
+        <div class="qtybox">
+          <button onclick="pdpQty(-1)">−</button><span id="pdpQty">1</span><button onclick="pdpQty(1)">+</button>
+        </div>
+        <button class="btn btn-primary" style="flex:1" onclick="addToCart(${p.id},true)">Add to Cart · ${money(p.price)}</button>
+      </div>
+      <button class="btn btn-outline btn-block" style="margin-bottom:24px" onclick="addToCart(${p.id},true);openCart()">Buy It Now</button>
+      <div class="pdp-meta">
+        <div><b>Free shipping</b> on orders over $75</div>
+        <div><b>30-day returns</b> · easy exchanges</div>
+        <div><b>In stock</b> · ships within 1–2 business days</div>
+      </div>
+    </div>`;
+  // related: other items in same collection
+  const rel=COLLECTIONS[p.colKey].products.filter(x=>x.id!==id).slice(0,4);
+  $('#pdpRelated').innerHTML=rel.map(r=>cardHTML(r,p.colKey)).join('');
+  go('product');
+}
+function pdpThumb(el,src){ $('#pdpMain').src=src; document.querySelectorAll('.pdp-thumbs img').forEach(i=>i.classList.remove('active')); el.classList.add('active'); }
+function pdpColor(i){ pdpSel.color=i; $('#colorName').textContent=COLORS[i][0]; document.querySelectorAll('.swatch').forEach((s,x)=>s.classList.toggle('active',x===i)); }
+function pdpSize(el,s){ pdpSel.size=s; document.querySelectorAll('.size-opt').forEach(b=>b.classList.remove('active')); el.classList.add('active'); }
+function pdpQty(d){ pdpSel.qty=Math.max(1,pdpSel.qty+d); $('#pdpQty').textContent=pdpSel.qty; }
+
+/* ---------- Cart ---------- */
+let cart=[];
+try{ cart=JSON.parse(localStorage.getItem('ep_cart')||'[]'); }catch(e){ cart=[]; }
+function saveCart(){ localStorage.setItem('ep_cart',JSON.stringify(cart)); }
+function addToCart(id, fromPdp){
+  const p=findProduct(id); if(!p) return;
+  const variant = fromPdp ? `${COLORS[pdpSel.color][0]}${pdpSel.size?(' / '+pdpSel.size):''}` : 'Default';
+  const qty = fromPdp ? pdpSel.qty : 1;
+  const key = id+'|'+variant;
+  const existing=cart.find(c=>c.key===key);
+  if(existing) existing.qty+=qty;
+  else cart.push({key, id, name:p.name, price:p.price, img:p.img, variant, qty});
+  saveCart(); renderCart(); bumpCount(); toast(`Added to cart · ${p.name}`);
+}
+function removeItem(key){ cart=cart.filter(c=>c.key!==key); saveCart(); renderCart(); bumpCount(); }
+function itemQty(key,d){
+  const it=cart.find(c=>c.key===key); if(!it) return;
+  it.qty+=d; if(it.qty<1){ removeItem(key); return; }
+  saveCart(); renderCart(); bumpCount();
+}
+function cartTotalQty(){ return cart.reduce((s,c)=>s+c.qty,0); }
+function cartSubtotal(){ return cart.reduce((s,c)=>s+c.price*c.qty,0); }
+function bumpCount(){
+  const n=cartTotalQty(); const el=$('#cartCount');
+  el.textContent=n; el.style.display=n>0?'flex':'none';
+}
+function renderCart(){
+  const body=$('#cartBody'), foot=$('#cartFoot');
+  if(!cart.length){
+    body.innerHTML=`<div class="cart-empty">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M6 2L3 6v14a2 2 0 0 0 2 2h14a2 2 0 0 0 2-2V6l-3-4z"/><path d="M3 6h18"/><path d="M16 10a4 4 0 0 1-8 0"/></svg>
+      <h4>Your cart is empty</h4>
+      <p>Looks like your pack needs some gear.</p>
+      <button class="btn btn-primary" style="margin-top:18px" onclick="closeCart();go('collection','boykinflauge')">Start Shopping</button>
+    </div>`;
+    foot.innerHTML='';
+    return;
+  }
+  body.innerHTML=cart.map(c=>`
+    <div class="cart-item">
+      <img src="${c.img}" alt="${c.name}"/>
+      <div class="ci-info">
+        <div class="nm">${c.name}</div>
+        <div class="vr">${c.variant}</div>
+        <div class="ci-bottom">
+          <div class="ci-qty">
+            <button onclick="itemQty('${c.key}',-1)">−</button><span>${c.qty}</span><button onclick="itemQty('${c.key}',1)">+</button>
+          </div>
+          <div class="ci-price">${money(c.price*c.qty)}</div>
+        </div>
+        <button class="ci-remove" onclick="removeItem('${c.key}')">Remove</button>
+      </div>
+    </div>`).join('');
+  const sub=cartSubtotal();
+  const ship = sub>=75||sub===0 ? 0 : 6.95;
+  foot.innerHTML=`
+    <div class="line"><span>Subtotal</span><span>${money(sub)}</span></div>
+    <div class="line"><span>Shipping</span><span>${ship===0?'FREE':money(ship)}</span></div>
+    ${sub<75?`<div class="line" style="color:var(--brown-soft)"><span>Add ${money(75-sub)} for free shipping</span><span></span></div>`:''}
+    <div class="total"><b>Total</b><b>${money(sub+ship)}</b></div>
+    <button class="btn btn-primary btn-block" onclick="checkout()">Checkout</button>
+    <button class="btn btn-outline btn-block" style="margin-top:10px" onclick="closeCart()">Continue Shopping</button>
+    <div class="ship-note">🐾 Taxes calculated at checkout · Secure payment</div>`;
+}
+function checkout(){
+  if(!cart.length) return;
+  toast('Demo checkout — order flow not connected');
+  alert("Thanks for shopping Eleven Peaks Trading Co.!\n\nThis is a front-end demo, so no payment is processed.\n\nOrder total: "+money(cartSubtotal()+(cartSubtotal()>=75?0:6.95)));
+}
+function openCart(){ renderCart(); $('#overlay').classList.add('open'); $('#cartDrawer').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeCart(){ $('#overlay').classList.remove('open'); $('#cartDrawer').classList.remove('open'); document.body.style.overflow=''; }
+
+/* ---------- Toast ---------- */
+let toastTimer=null;
+function toast(msg){
+  $('#toastMsg').textContent=msg;
+  $('#toast').classList.add('show');
+  clearTimeout(toastTimer);
+  toastTimer=setTimeout(()=>$('#toast').classList.remove('show'),2600);
+}
+
+/* ---------- Router ---------- */
+function go(page, arg){
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  if(page==='collection'){ openCollection(arg); $('#page-collection').classList.remove('hidden'); }
+  else { $('#page-'+page).classList.remove('hidden'); }
+  window.scrollTo({top:0,behavior:'instant'});
+  // pause hero when off home
+  if(page==='home'){ if(!heroTimer) startHero(); } else { clearInterval(heroTimer); heroTimer=null; }
+  closeMobile();
+}
+
+/* ---------- Search ---------- */
+function openSearch(){ $('#searchbar').classList.add('open'); setTimeout(()=>$('#searchInput').focus(),120); }
+function closeSearch(){ $('#searchbar').classList.remove('open'); }
+function runSearch(q){
+  q=q.trim().toLowerCase();
+  if(!q) return;
+  let res=ALL_PRODUCTS.filter(p=>p.name.toLowerCase().includes(q)||p.tag.toLowerCase().includes(q)||p.cat.toLowerCase().includes(q));
+  const _seen=new Set(); res=res.filter(p=>{const kk=p.name.toLowerCase(); if(_seen.has(kk))return false; _seen.add(kk); return true;});
+  $('#searchTitle').textContent=`Results for “${q}”`;
+  $('#searchCount').textContent=res.length;
+  $('#searchGrid').innerHTML = res.length? res.map(p=>cardHTML(p,p.colKey)).join('')
+    : `<div style="grid-column:1/-1;text-align:center;padding:60px;color:var(--muted)"><h3 style="margin-bottom:8px">No matches found</h3><p>Try “trucker”, “vest”, “Boykinflauge” or “plush”.</p></div>`;
+  document.querySelectorAll('.page').forEach(p=>p.classList.add('hidden'));
+  $('#page-search').classList.remove('hidden');
+  closeSearch();
+  window.scrollTo({top:0,behavior:'instant'});
+}
+
+/* ---------- Mobile nav ---------- */
+function openMobile(){ $('#mobileNav').classList.add('open'); $('#overlay').classList.add('open'); document.body.style.overflow='hidden'; }
+function closeMobile(){ $('#mobileNav').classList.remove('open'); if(!$('#cartDrawer').classList.contains('open')){ $('#overlay').classList.remove('open'); document.body.style.overflow=''; } }
+
+/* ---------- Wire up ---------- */
+function init(){
+  buildNav(); buildCatTiles(); buildHero(); buildFeatTabs();
+  $('#storyImg').style.background = `#5a3a24 url('${REAL_SLIDES[3]||''}') center/cover`;
+  $('#aboutImg').style.background = `#5a3a24 url('${REAL_SLIDES[1]||''}') center/cover`;
+  bumpCount();
+
+  // header shadow on scroll
+  window.addEventListener('scroll',()=>{ $('#header').classList.toggle('scrolled', window.scrollY>10); });
+
+  // search toggles
+  $('#searchToggle').addEventListener('click',()=>{
+    $('#searchbar').classList.contains('open')?closeSearch():openSearch();
+  });
+  $('#searchClose').addEventListener('click',closeSearch);
+  $('#searchInput').addEventListener('keydown',e=>{ if(e.key==='Enter') runSearch(e.target.value); });
+
+  // hamburger
+  $('#hamburger').addEventListener('click',openMobile);
+
+  // forms
+  $('#newsForm').addEventListener('submit',e=>{ e.preventDefault(); e.target.querySelector('input').value=''; $('#newsOk').classList.remove('hidden'); });
+  $('#contactForm').addEventListener('submit',e=>{ e.preventDefault(); e.target.reset(); $('#contactOk').classList.remove('hidden'); });
+
+  // esc closes overlays
+  document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ closeCart(); closeMobile(); closeSearch(); } });
+}
+document.addEventListener('DOMContentLoaded',init);
+</script>
+</body>
+</html>
