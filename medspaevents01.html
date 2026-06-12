@@ -60,7 +60,7 @@
     }
 
     .logo {
-      margin-bottom: 16px;
+      margin-bottom: 1rem;
     }
     .logo img {
       display: block;
@@ -380,12 +380,12 @@
       .logo img { margin: 0 auto; }
 
       .headline { font-size: 64px; }
-      .subhead { max-width: 45ch; margin-left: auto; margin-right: auto; }
+      .subhead { max-width: 45ch; margin-left: auto; margin-right: auto; padding-bottom: 48px; }
 
-      .event-toggle { justify-content: center; font-size: 13px; letter-spacing: 0.24em; }
+      .event-toggle { justify-content: center;}
 
       /* remove max-height caps on tablet so panels size to content */
-      .event-extra { max-width: 100%; }
+      .event-extra { max-width: 624px; align-self: center; }
       .event-extra.open { max-height: none; min-height: 0; }
 
       .form-col {
@@ -395,10 +395,22 @@
         align-items: center;
         text-align: center;
       }
+
+      /* center everything in the stacked hero + privacy, but keep input text left-aligned */
+      .hero-body { text-align: center; }
+      .privacy { text-align: center; }
+      .form-card input,
+      .form-card textarea { text-align: left; }
     }
     @media (max-width: 480px) {
+      .wrap { align-items: center; }
+      .logo img { width: 11rem; }
+      .hero-body { margin-top: 1.5rem; align-content: center; justify-content: center; }
+      .hero { padding: 56px 24px 32px; }
+      .headline { font-size: 3.653rem; line-height: 1.1em; max-width: 80%; align-self: center; }
+      .subhead { font-size: .9rem; line-height: 1.75; max-width: 90%; padding: 20px 0px 48px;}
+      .event-toggle { font-size: 0.9rem; }
       .row { grid-template-columns: 1fr; gap: 20px; }
-      .headline { font-size: 48px; }
     }
   </style>
 </head>
